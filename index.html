@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>Html5-osb-player by JixunMoe</title>
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+
+        <header>
+          <h1>Html5-osb-player</h1>
+          <h2>Online Osb Player HTML5 JavaScript KeneticJS</h2>
+        </header>
+
+        <section id="downloads" class="clearfix">
+          <a href="https://github.com/JixunMoe/HTML5-Osb-Player/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
+          <a href="https://github.com/JixunMoe/HTML5-Osb-Player/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+          <a href="https://github.com/JixunMoe/HTML5-Osb-Player" id="view-on-github" class="button"><span>View on GitHub</span></a>
+        </section>
+
+        <hr>
+
+        <section id="main_content">
+          <h1>
+<a name="html5-osb-player" class="anchor" href="#html5-osb-player"><span class="octicon octicon-link"></span></a>HTML5 Osb Player</h1>
+
+<p><a href="http://creativecommons.org/licenses/by-sa/3.0/"><img src="http://i.creativecommons.org/l/by-sa/3.0/80x15.png" alt="Creative Commons License"></a>
+HTML5 Osb Player is licensed under a <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</p>
+
+<h2>
+<a name="faq" class="anchor" href="#faq"><span class="octicon octicon-link"></span></a>FAQ</h2>
+
+<h3>
+<a name="how-to-use-the-code" class="anchor" href="#how-to-use-the-code"><span class="octicon octicon-link"></span></a>How to use the code?</h3>
+
+<p>Firstly, you'll need to include the <code>playOsu!.js</code> in to your project, then:</p>
+
+<div class="highlight highlight-javascript"><pre><span class="kd">var</span> <span class="nx">$c</span> <span class="o">=</span> <span class="nx">playOsu</span><span class="p">({</span>
+    <span class="nx">basePath</span><span class="o">:</span> <span class="s1">'mapset/MapId/'</span><span class="p">,</span>              <span class="c1">// Specify the map base path.</span>
+    <span class="nx">osuPath</span><span class="o">:</span> <span class="s1">'Artist - SongName (Mapper) [Diff].osu'</span><span class="p">,</span>   <span class="c1">// Specify the osu file for render.</span>
+    <span class="nx">osbPath</span><span class="o">:</span> <span class="s1">'Artist - SongName (Mapper).osb'</span><span class="p">,</span>      <span class="c1">// Specify the osb file for render.</span>
+    <span class="nx">musicPath</span><span class="o">:</span> <span class="s1">'The_File_Name_of_the_Music.mp3'</span>     <span class="c1">// The Audio file name.</span>
+<span class="p">},</span> <span class="s1">'osuStage'</span><span class="p">);</span>
+</pre></div>
+
+<h3>
+<a name="change-resolution-at-run-time" class="anchor" href="#change-resolution-at-run-time"><span class="octicon octicon-link"></span></a>Change resolution at run time?</h3>
+
+<p>Sure. Firstly, include the following (Or similar) HTML code...</p>
+
+<div class="highlight highlight-html"><pre><span class="nt">&lt;select</span> <span class="na">id=</span><span class="s">"reso"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"0.5"</span><span class="nt">&gt;</span>320x240<span class="nt">&lt;/option&gt;</span>
+    <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"1"</span> <span class="na">selected=</span><span class="s">"selected"</span><span class="nt">&gt;</span>640x480<span class="nt">&lt;/option&gt;</span>
+    <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"1.25"</span><span class="nt">&gt;</span>800x600<span class="nt">&lt;/option&gt;</span>
+    <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"1.88125"</span><span class="nt">&gt;</span>1024x768<span class="nt">&lt;/option&gt;</span>
+<span class="nt">&lt;/select&gt;</span>
+</pre></div>
+
+<p>... with the following JavaScript code ...</p>
+
+<div class="highlight highlight-javascript"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'#reso'</span><span class="p">).</span><span class="nx">on</span> <span class="p">(</span><span class="s1">'change'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">w</span><span class="o">:</span> <span class="mi">640</span><span class="p">,</span> <span class="nx">h</span><span class="o">:</span> <span class="mi">480</span> <span class="p">},</span> <span class="nx">zoom</span> <span class="o">=</span> <span class="nb">parseFloat</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
+    <span class="nx">$c</span><span class="p">.</span><span class="nx">stage</span><span class="p">.</span><span class="nx">setScale</span>  <span class="p">(</span><span class="nx">zoom</span><span class="p">);</span>   <span class="c1">// Set the zoom</span>
+    <span class="nx">$c</span><span class="p">.</span><span class="nx">stage</span><span class="p">.</span><span class="nx">setWidth</span>  <span class="p">(</span><span class="nx">zoom</span> <span class="o">*</span> <span class="nx">b</span><span class="p">.</span><span class="nx">w</span><span class="p">);</span> <span class="c1">// Set the new</span>
+    <span class="nx">$c</span><span class="p">.</span><span class="nx">stage</span><span class="p">.</span><span class="nx">setHeight</span> <span class="p">(</span><span class="nx">zoom</span> <span class="o">*</span> <span class="nx">b</span><span class="p">.</span><span class="nx">h</span><span class="p">);</span> <span class="c1">//   Height &amp; Width</span>
+<span class="p">});</span>
+</pre></div>
+
+<p>Note:
+If the audio from the osz file does not work, try:
+<code>ffmpeg -i "Path/To/Audio" "Output/Path/Filename.mp3"</code></p>
+        </section>
+
+        <footer>
+          Html5-osb-player is maintained by <a href="https://github.com/JixunMoe">JixunMoe</a><br>
+          This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
+        </footer>
+
+        
+      </div>
+    </div>
+  </body>
+</html>
