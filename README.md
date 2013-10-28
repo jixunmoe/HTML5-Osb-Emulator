@@ -1,6 +1,6 @@
-# HTML5 Osb Player
+# HTML5 Osb Emulator
 [![Creative Commons License](http://i.creativecommons.org/l/by-sa/3.0/80x15.png)](http://creativecommons.org/licenses/by-sa/3.0/)
-HTML5 Osb Player is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License](http://creativecommons.org/licenses/by-sa/3.0/).
+HTML5 Osb Emulator is released under [Creative Commons Attribution-ShareAlike 3.0 Unported License](http://creativecommons.org/licenses/by-sa/3.0/).
 
 ## FAQ
 ###How to use the code?
