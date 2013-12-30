@@ -1,7 +1,8 @@
 ﻿; // osb Emu
 function playOsu ($osuConfig, containerId) {
-	// http://notes.jetienne.com/2011/05/18/cancelRequestAnimFrame-for-paul-irish-requestAnimFrame.html
+	var $ = $osuConfig.$ || $osuConfig.jQuery || window.$ || throw new Error ('Unable to get jQuery');
 	
+	// http://notes.jetienne.com/2011/05/18/cancelRequestAnimFrame-for-paul-irish-requestAnimFrame.html
 	var requestAnimFrame = (function(){
 		return window.requestAnimationFrame    || 
 			window.webkitRequestAnimationFrame || 
