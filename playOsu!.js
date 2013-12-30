@@ -1,6 +1,7 @@
 ﻿; // osb Emu
 function playOsu ($osuConfig, containerId) {
-	var $ = $osuConfig.$ || $osuConfig.jQuery || window.$ || throw new Error ('Unable to get jQuery');
+	var $ = $osuConfig.$ || $osuConfig.jQuery || window.$ || null;
+	if (!$) throw new Error ('Unable to get jQuery');
 	
 	// http://notes.jetienne.com/2011/05/18/cancelRequestAnimFrame-for-paul-irish-requestAnimFrame.html
 	var requestAnimFrame = (function(){
